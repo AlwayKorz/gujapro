@@ -1,0 +1,37 @@
+_G.AutoFarm = true
+
+local TWS = game:service"TweenService"
+
+
+local TW1 = TWS:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2) , {CFrame = CFrame.new(-59.2234116, 50.4124069, 1217.97339, -0.999992669, 4.18698619e-05, -0.0038255176, -1.63489309e-11, 0.999940097, 0.010944237, 0.00382574671, 0.0109441569, -0.999932766)})
+local TW2 = TWS:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(15) , {CFrame = CFrame.new(-75.9275436, 50.71449041, 8288.9043, -0.826921284, -0.0559718162, -0.559525132, -0.256031454, 0.923385978, 0.286017984, 0.500648737, 0.379770398, -0.777898014)})
+local End = TWS:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2) , {CFrame = CFrame.new(-55.7065125, -358.739624, 9492.35645, 0, 0, -1, 0, 1, 0, 1, 0, 0)})
+
+
+while _G.AutoFarm do
+    spawn(function()
+        if _G.AutoFarm then
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+            TW1:Play()
+TW1.Completed:Wait()
+TW2:Play()
+TW2.Completed:Wait()
+End:Play()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+End.Completed:Wait()  
+_G.AutoFarm = false
+wait(15)
+_G.AutoFarm = true
+        end)
+    end
+end)
+end
+
+  
+
+
+
+
+
+
