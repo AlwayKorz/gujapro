@@ -1,5 +1,9 @@
 -- Made by TheXploiter
- 
+
+if game.CoreGui.ScreenGui then
+	game.CoreGui.ScreenGui:Destroy()
+end
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local title = Instance.new("TextLabel")
